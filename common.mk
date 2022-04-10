@@ -88,6 +88,17 @@ AB_OTA_POSTINSTALL_CONFIG += \
 PRODUCT_PACKAGES += \
     otapreopt_script
 
+# OPTIONAL=false so that the error in check_dynamic_partitions will be
+# propagated to OTA client.
+AB_OTA_POSTINSTALL_CONFIG += \
+    RUN_POSTINSTALL_product=true \
+    POSTINSTALL_PATH_product=bin/check_dynamic_partitions \
+    FILESYSTEM_TYPE_product=ext4 \
+    POSTINSTALL_OPTIONAL_product=false
+
+PRODUCT_PACKAGES += \
+    check_dynamic_partitions
+
 # ANT+
 PRODUCT_PACKAGES += \
     AntHalService-Soong \
@@ -361,6 +372,10 @@ PRODUCT_PACKAGES += \
     libqti_vndfwk_detect \
     libqti_vndfwk_detect.vendor \
     libsqlite.vendor:64
+
+# Retrofit Dynamic Partitions
+PRODUCT_USE_DYNAMIC_PARTITIONS := true
+PRODUCT_RETROFIT_DYNAMIC_PARTITIONS := true
 
 # RIL
 PRODUCT_PACKAGES += \
