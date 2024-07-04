@@ -14,6 +14,13 @@
 # limitations under the License.
 #
 
+# DerpFest Flags
+DERP_BUILDTYPE=Envoy-Z-Lab
+DERP_VERSION_APPEND_TIME_OF_DAY=true
+#EXTRA_UDFPS_ICONS=true
+TARGET_NOT_USES_BLUR=true
+TARGET_USES_PICO_GAPPS=true
+
 # Add common definitions for Qualcomm
 $(call inherit-product, hardware/qcom-caf/common/common.mk)
 
