@@ -362,6 +362,10 @@ PRODUCT_PACKAGES += \
     libqti_vndfwk_detect.vendor \
     libsqlite.vendor:64
 
+# Remove Packages
+PRODUCT_PACKAGES += \
+	RemovePackages
+
 # RIL
 PRODUCT_PACKAGES += \
     android.hardware.radio@1.5.vendor \
